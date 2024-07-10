@@ -1,0 +1,123 @@
+:root {
+  --midnight: #2c3e50;
+  --clouds: #ecf0f1;
+}
+
+/* General */
+body {
+  color: var(--midnight);
+  background: var(--clouds);
+  /* padding: 0 1em 1em; */
+}
+
+h1 {
+  margin: 0;
+  line-height: 2;
+  text-align: center;
+  font-family: "Times New Roman";
+  font-weight: bold;
+}
+
+h2 {
+  margin: 0 0 0.5em;
+  font-weight: normal;
+  font-family: "Times New Roman";
+}
+
+/* input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+} */
+
+/* Layout */
+.row {
+  display: flex;
+}
+
+.row .col {
+  flex: 1;
+}
+
+.row .col:last-child {
+  margin-left: 1em;
+}
+
+/* Accordion styles */
+.tabs {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.outer {
+  margin-top: 70px;
+}
+.main {
+  margin-top: 30px;
+}
+
+.tab {
+  width: 100%;
+  color: white;
+  overflow: hidden;
+  font-family: "Times New Roman";
+}
+
+.tab-label {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  background: black;
+  font-weight: bold;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.tab-label:hover {
+  background: var(--midnight);
+}
+.tab-label::after {
+  content: "\276F";
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  transition: all 0.35s;
+  /* Add position and display properties */
+  position: relative;
+  display: inline-block;
+}
+
+.tab-content {
+  max-height: 0;
+  padding: 0 1em;
+  color: var(--midnight);
+  background: white;
+  transition: all 0.35s;
+  font-size: 20px;
+}
+
+.tab-close {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1em;
+  font-size: 2em;
+  background: var(--midnight);
+  cursor: pointer;
+}
+
+.tab-close:hover {
+  background: var(--midnight);
+}
+
+/* :checked */
+input:checked + .tab-label {
+  background: var(--midnight);
+}
+
+input:checked ~ .tab-content {
+  max-height: 100vh;
+  padding: 1em;
+}
